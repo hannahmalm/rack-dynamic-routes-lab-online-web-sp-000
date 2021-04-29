@@ -8,7 +8,7 @@ class Application
   	if req.path=="/items/"
   	  item_name = req.path.split("/items/").last #hand the split method the pieces of the elements to separate
   	  if item =  @@items.find{|item| item.name == item_name} 
-  	    resp.write "#{item.price}"
+  	    resp.write item.price
   	   else 
     	  resp.write "Item not found"
         resp.status = 400
